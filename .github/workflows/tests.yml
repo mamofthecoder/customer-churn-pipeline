@@ -70,3 +70,16 @@ jobs:
 
       - name: Run PostgreSQL integration tests
         run: python -m pytest -q test_churn_integration.py
+
+  docker-smoke-test:
+    name: Docker build and startup
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build scoring image
+        run: docker build -t customer-churn-scorer:ci .
+
+      - name: Check scorer starts
+        run: docker run --rm customer-churn-scorer:ci --help
