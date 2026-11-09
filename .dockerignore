@@ -1,0 +1,5 @@
+*
+!Dockerfile
+!requirements-lock.txt
+!score_churn.py
+!customer_churn_model.joblib
