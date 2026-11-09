@@ -193,6 +193,14 @@ A separate temporary-table lab explored sequential scans, bitmap scans, selectiv
 - Run-history completion is committed separately from predictions. An interruption can leave a Running record even when scoring has committed; reconciliation is necessary.
 - A deployed model-version label must change when the model, preprocessing, or threshold changes; the script does not calculate a model fingerprint automatically.
 
+## Continuous integration
+
+GitHub Actions runs 6 unit tests and 5 integration tests. The integration
+job starts a temporary PostgreSQL 16 database, and each test uses its
+own schema.
+
+[View CI runs](https://github.com/mamofthecoder/customer-churn-pipeline/actions)
+
 ## Skills demonstrated
 
 Python, pandas, scikit-learn pipelines, cost-sensitive classification, nested validation, PostgreSQL, parameterized SQL, upserts, triggers, change logs, incremental processing, backfills, schema migrations, transaction handling, advisory locks, pytest, monitoring queries, and query-plan interpretation.
