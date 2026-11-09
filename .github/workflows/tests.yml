@@ -18,7 +18,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.8.19"
+          python-version: '3.8.18'
+        
           cache: pip
 
       - name: Install dependencies
